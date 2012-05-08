@@ -4,6 +4,11 @@
 
 include <metric.scad>;
 
+<<<<<<< HEAD
+=======
+//translate([0,35,0]) rotate([0,0,-90])import("60 End.stl");
+
+>>>>>>> 9148ec489476c34662f17ade0414d7ab6249861f
 $fn=30;
 
 part();
