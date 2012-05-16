@@ -11,24 +11,16 @@ h = 6;				// thickness
 fp = true;		// four mounting points
 o=0.1;
 
-//msvxmount(h);
-//makerslide(4,true);
-	translate([42,0,20+2*h]) rotate([-90,0,90]) difference()
-	{
-		cube([40+2*h,20+2*h,5]);
-		translate([h,h,-o])makerslide(5+2*o,true);
-	}
-
-
-
-module msvxmount(th)
+translate([0,0,0]) rotate([0,0,90]) difference()
 {
-	translate([0,40+2*th-o,0]) rotate([0,0,0]) nema17motormount(th,fp);
-	translate([42,0,20+2*th]) rotate([-90,0,90]) difference()
-	{
-		cube([40+2*th,20+2*th,42]);
-		translate([th,th,-o])makerslide(42+2*o,true);
-	}
+	cube([40+2*h,20+2*h,6]);
+	translate([h,h,1.5])makerslide(5+2*o,true);
+}
+
+translate([-35,0,0]) rotate([0,0,90]) difference()
+{
+	cube([40+2*h,20+2*h,6]);
+	translate([h,h,2])makerslide(5+2*o,true);
 }
 
 
