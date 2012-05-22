@@ -3,10 +3,11 @@
 // funfor.us
 
 h = 5;   	// base thickness
+hh=6;
 o = 0.1;	//  overlap amount
-hh = 6;		// bar holder height
 w=2.5;			// wall thickness
-fmp = true;	// four mount points
+fmp = false;	// four mount points
+st=2;
 
 //import("Y Motor Bracket.stl");
 
@@ -23,7 +24,7 @@ translate([0,0,0]) ymotormount();
 module ymotormount()
 {
 	translate([5,0,0]) nema17motormount(h,fmp);
-	//translate([20,2,0]) rotate([90,0,180]) wall();
+	translate([0,0,0]) rotate([0,0,0]) walls();
 }
 
 
@@ -56,35 +57,60 @@ module nema17motormount(pt,mp)
 			if (mp==false) translate([1,0,0]) difference()
 			{
 				translate([2.6,9.3,0]) cylinder(r=9.3,h=pt);
-				#translate([-8,0,-o]) cube([7,20,pt+2*o]);
+				translate([-8,0,-o]) cube([7,20,pt+2*o]);
 			}
 		}
 		translate([5.5,5.5,-o]) cylinder(r=m3/2,h=pt+2*o);
 		translate([5.5,36.5,-o]) cylinder(r=m3/2,h=pt+2*o);
 		translate([36.5,36.5,-o]) cylinder(r=m3/2,h=pt+2*o);
-		if (mp)
+		if (mp==true)
 		{
 			translate([36.5,5.5,-o]) cylinder(r=m3/2,h=pt+2*o);
 	
 		}
-		}
 	}
-
 }
 
 
-module wall()
+module walls()
 {
 	difference()
 	{
-		union()
-		{
-translate([-32,-23.3,0]) 
-			translate([0,0,0]) rotate([0,0,0]) cube([20,20,hh]);
-			translate([7.5,0,-2]) cube([5,11,2.1]);
-		}
-		translate([10,14,-o]) rotate([0,0,0]) cylinder(r=m4/2,h=9);
+			translate([0,0,0]) rotate([0,0,0]) cube([h+o,47,25]);
+			translate([-o,0,h]) rotate([atan(20/42),0,0]) cube([h+3*o,47,25]);
 	}
+	difference()
+	{
+			translate([0,42,0]) rotate([0,0,0]) cube([11,20,h]);
+			translate([0,47,-o]) rotate([0,0,-atan(5/15)]) mirror([1,0,0]) cube([10,20,h+3*o]);
+	}
+	difference()
+	{
+			translate([h,42,0]) rotate([0,0,0]) cube([hh,20,25]);
+			translate([h-o,62,15]) rotate([atan(7.5/10),0,0]) cube([hh+2*o,20,25]);
+			translate([h-o,52,10]) rotate([0,90,0]) cylinder(r=m4/2,h=hh+2*o);
+	}
+
+	difference()
+	{
+			translate([31,42,0]) rotate([0,0,0]) cube([16,20,h]);
+			translate([47,47,-o]) rotate([0,0,atan(10/15)]) mirror([0,0,0]) cube([10,20,h+3*o]);
+	}
+	difference()
+	{
+			translate([31,42,0]) rotate([0,0,0]) cube([hh,20,20]);
+			translate([31-o,62,12.5]) rotate([atan(7.5/7.5),0,0]) cube([hh+2*o,20,25]);
+			translate([31-o,52,10]) rotate([0,90,0]) cylinder(r=m4/2,h=hh+2*o);
+	}
+	difference()
+	{
+			translate([31,42,0]) rotate([0,0,0]) cube([16,h,20]);
+			translate([47,42-o,h]) rotate([0,-atan(10/15),0]) mirror([0,0,0]) cube([16,h+3*o,20]);
+	}
+
+	translate([18.5,42,0]) rotate([0,0,0]) cube([5,st,h]);
+
+
 
 }
 
