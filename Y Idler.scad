@@ -14,7 +14,7 @@ st=2;					// slot tab depth 2=normal, -1=none
 $fn=30;
 
 yidler(h,w,m,st);
-
+translate([-5,0,0]) mirror([1,0,0]) yidler(h,w,m,st);
 
 module yidler(yih, yiw, yim, yst)
 {
