@@ -1,41 +1,18 @@
-Build instructions and BOM are over at the Reprap wiki at http://reprap.org/wiki/Prism
+This source code is conveyed under the GPL v2.0 license.  The original source code is conveyed under the GPL v2.0 license.  This codebase contains modifications made by Terawatt Industries that are also licensed under GPL v2.0 license.
 
-Parts Print count:
+The Prism Reprap is an open-source 3D printer originally designed by Buback on the RepRap Wiki (http://reprap.org/wiki/Prism).
 
-Z Motor Bracket - Belt:		1
-Z Lead Screw Support: 		2
-Y Motor Bracket:		1
-Y Idler:			1
-Rod Holder- Ztop:		2
-Rod Holder - Y and Zbottom	6
-90 thin R:			1
-90 thin L:			1
-90 R:				2
-90 L:				2
-60 Inside;			6
-60 End				6
-z-driven-pulley_2up		1 (nophead's z driven pulleys, prints 2 pulleys and 2 rims. http://www.thingiverse.com/thing:3474)
+The original Prism design source-code was distributed for compatibility with Google Sketchup.  The code was generously ported to SCAD by Github's 'egenoup'.  The SCAD sources are the original fork for this codebase and can be found at https://github.com/egenoup/Prism-Reprap.
 
-Alternate parts:
-
-Spacer - Replaces 90 R and L, but might result in less rigidity:
-	Spacer:			8
-	90 thin R:		2 Additional
-	90 thin L:		2 Additional
+All SCAD files are in /scad folder.  STL files are in /dist.
 
 
-608 Y Idler - Replaces 624 bearing with 608 bearing used in Prusa Mendel
-	608 Y Idler:		1
-	608 Y Idler 2:		1
-	
-Additional parts:
+Changes (version, changes):
+----------------------------------------
+aliceblue:
+Created project.
+Created new y-axis supports that rest on top of extrusion.
+Added placeholder for dedicated X and Z axes.  For now 'aliceblue' uses the X-Ends at https://bitbucket.org/terawattindustries/x-ends-mtsnr8-acetal.
 
-2020 Wire Clip - clips onto 20x20 extrusion to hold wires in the channel
-	2020 Wire Clip:		Print as many as you need
-
-Y Idler 2 - Recomended to keep your idler from bending under tension. Chiral copy of regular Y Idler.
-	Y Idler 2:		1
-	
-
-Cheers
-Buback
+antiquewhite:
+?
