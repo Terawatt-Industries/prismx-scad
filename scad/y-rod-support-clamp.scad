@@ -24,42 +24,21 @@ clamp_rod_radius = rod_radius - 0.1;	// -0.1 diameter
 // RENDER
 $fn=30;
 
-translate([0,0,0]) yrodsupport(holder_height, holder_width, mnt_base_thickness, overlap, slot_tab_depth, clamp_rod_radius, rod_center_offset_vert);
+translate([0,-15,-15]) yrodsupportclamp(holder_height, holder_width, mnt_base_thickness, overlap, slot_tab_depth, clamp_rod_radius, rod_center_offset_vert);
 
-module yrodsupport(yh, yw, ybt,yo,ystd,yrd,yrcov) 
+module yrodsupportclamp(yh, yw, ybt,yo,ystd,yrd,yrcov) 
 {
 	difference() {
-		union() {
 		rodsupport(yh, yw, ybt,yo,ystd,yrd,yrcov);
-		base(yh,yw, ybt,yo,ystd,yrd,yrcov);
-		}
 		// clamp screws
 		translate([10, 3 * yw / 8 + yrd / 4 - m4_diameter / 2, -0.01]) rotate([0, 0, 0]) cylinder(r=m4_diameter / 2, h=extrusion_width + offset_above_extrusion + yrd / 2 + (extrusion_width / 2 * sin(a)) + 0.01);
 		translate([10, yw - (3 * yw / 8 + yrd / 4 - m4_diameter / 2), -0.01]) rotate([0,0,0]) cylinder(r=m4_diameter / 2, h=extrusion_width + offset_above_extrusion + yrd / 2 + (extrusion_width / 2 * sin(a)) + 0.01);
 		// clamp washers for sqaure mounting
-		translate([10, 3 * yw / 8 + yrd / 4 - m4_diameter / 2, -0.01]) rotate([0, 0, 0]) cylinder(r=m4_diameter / 2 + 1.7, h = 5);
+		translate([10, 3 * yw / 8 + yrd / 4 - m4_diameter / 2, -0.01]) rotate([0, 0, 0]) cylinder(r=m4_diameter / 2, h=extrusion_width + offset_above_extrusion + yrd / 2 + (extrusion_width / 2 * sin(a)) + 0.01);
 		translate([10, yw - (3 * yw / 8 + yrd / 4 - m4_diameter / 2), -0.01]) rotate([0,0,0]) cylinder(r=m4_diameter / 2 + 1.7, h = 5);
 	}
 }
 
-module base(yh, yw, ybt, yo, ystd, yrd, yrcov)
-{
-	difference()
-	{
-		union()
-		{
-			translate([0,0,0]) cube([ybt, yw, extrusion_width]);
-			translate([ybt, yw / 4, 0]) cube([ybt, yw / 2, extrusion_width]);
-			// 	angle supp
-			translate([ybt * 2 - (extrusion_width / 2 * cos(a)), yw / 4, extrusion_width / 2 * sin(a)]) rotate([0, a, 0]) cube([extrusion_width / 2, yw / 2, extrusion_width]);
-			// extrusion mount slot
-			translate([-ystd - 2 * yo, m4_screw_edge_padding + 12.5, yh / 2 - 2.5]) cube([ystd + 2 * yo, yw - 2 * m4_screw_edge_padding - 25, 5]);
-		}
-		translate([-0.01, yw / 2, extrusion_width + offset_above_extrusion + yrd / 2]) rotate([0,90,0]) cylinder(r=yrd,h=extrusion_width + 2 * yo + extrusion_width * sin(a));
-		translate([-yo, m4_screw_edge_padding, extrusion_width / 2]) rotate([0, 90, 0]) cylinder(r=m4_diameter / 2, h=ybt + 2 * yo);
-		translate([-yo, yw - m4_screw_edge_padding, extrusion_width / 2]) rotate([0,90,0]) cylinder(r=m4_diameter / 2, h=ybt + 2 * yo);
-	}
-}
 
 module rodsupport(yh, yw, ybt, yo, ystd, yrd, yrcov)
 {

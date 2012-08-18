@@ -4,7 +4,7 @@
 
 
 include <configuration.scad>;
-use <Y Motor Bracket.scad>;
+use <y-motor-bracket.scad>;
 
 h = 8;   	// base thickness
 o = 0.1;	//  overlap amount
