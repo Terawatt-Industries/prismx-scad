@@ -4,12 +4,12 @@
 
 include <configuration.scad>;
 
-use <Z Motor bracket - Belt.scad>;
-use <Z Lead Screw Support.scad>;
-use <Y Motor Bracket.scad>;
-use <Y Idler.scad>;
-use <Rod Holder - Z Top.scad>;
-use <Rod Holder - Y and Z Bottom.scad>;
+use <z-motor-bracket - Belt.scad>;
+use <z-lead-screw-support.scad>;
+use <y-motor-bracket.scad>;
+use <y-idler.scad>;
+use <rod-holder-z-top.scad>;
+use <rod-holder-y-and-z-bottom.scad>;
 
 
 translate([92,0,0]) rotate([0,0,90]) zmotorbracket(8,true,6);

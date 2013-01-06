@@ -1,6 +1,5 @@
-// C. Strang		
-// cstrang@????
-// funfor.us
+// C. Strang	
+// F. Beachler
 
 h = 5;   	// base thickness
 hh=6;

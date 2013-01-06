@@ -24,7 +24,8 @@ clamp_rod_radius = rod_radius - 0.1;	// -0.1 diameter
 // RENDER
 $fn=30;
 
-translate([0,0,0]) yrodsupport(holder_height, holder_width, mnt_base_thickness, overlap, slot_tab_depth, clamp_rod_radius, rod_center_offset_vert);
+// for upside down z = holder_height + offset_above_extrusion + rod_radius / 2
+translate([0, - holder_width / 2, 0]) rotate([0, 0, 0]) yrodsupport(holder_height, holder_width, mnt_base_thickness, overlap, slot_tab_depth, clamp_rod_radius, rod_center_offset_vert);
 
 module yrodsupport(yh, yw, ybt,yo,ystd,yrd,yrcov) 
 {
@@ -36,9 +37,9 @@ module yrodsupport(yh, yw, ybt,yo,ystd,yrd,yrcov)
 		// clamp screws
 		translate([10, 3 * yw / 8 + yrd / 4 - m4_diameter / 2, -0.01]) rotate([0, 0, 0]) cylinder(r=m4_diameter / 2, h=extrusion_width + offset_above_extrusion + yrd / 2 + (extrusion_width / 2 * sin(a)) + 0.01);
 		translate([10, yw - (3 * yw / 8 + yrd / 4 - m4_diameter / 2), -0.01]) rotate([0,0,0]) cylinder(r=m4_diameter / 2, h=extrusion_width + offset_above_extrusion + yrd / 2 + (extrusion_width / 2 * sin(a)) + 0.01);
-		// clamp washers for sqaure mounting
-		translate([10, 3 * yw / 8 + yrd / 4 - m4_diameter / 2, -0.01]) rotate([0, 0, 0]) cylinder(r=m4_diameter / 2 + 1.7, h = 5);
-		translate([10, yw - (3 * yw / 8 + yrd / 4 - m4_diameter / 2), -0.01]) rotate([0,0,0]) cylinder(r=m4_diameter / 2 + 1.7, h = 5);
+		// clamp nut countersink for square mounting
+		translate([10, 3 * yw / 8 + yrd / 4 - m4_diameter / 2, -0.01]) rotate([0, 0, 0]) cylinder(r=m4_diameter / 2 + 1.7, h = 15, $fn = 6);
+		translate([10, yw - (3 * yw / 8 + yrd / 4 - m4_diameter / 2), -0.01]) rotate([0,0,0]) cylinder(r=m4_diameter / 2 + 1.7, h = 15, $fn = 6);
 	}
 }
 
