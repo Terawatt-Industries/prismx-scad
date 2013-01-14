@@ -4,8 +4,8 @@
 
 include <configuration.scad>;
 
-h = 14;      //height 14 for normal "thick" parts
-//h = 6;		// height 6 for "thin" parts
+//h = 14;      //height 14 for normal "thick" parts
+h = 6;		// height 6 for "thin" parts
 
 t = 2;		// tab thickness 2 is normal, -1 to remove
 o = 0.1;	//  overlap amount for error free STLs
@@ -13,8 +13,8 @@ o = 0.1;	//  overlap amount for error free STLs
 
 $fn=30;
 
-translate([3,0,0]) prism90(h,t,5);
-translate([-3,0,0]) mirror() prism90(h,t,5);
+translate([0, 0, 0]) prism90(h,t,5);
+//translate([-3,0,0]) mirror() prism90(h,t,5);
 
 module prism90(th,st,hd)
 {
