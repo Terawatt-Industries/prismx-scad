@@ -11,10 +11,10 @@ o = 0.1;						// overlap amount for error-free STLs
 
 $fn=30;
 
-for (x = [0:1:2])
+for (x = [0])
 {
 	translate([(x*25),0,0]) prism60inside(thickness,slottabs,holes);
-	translate([20+(x*25),55,0]) mirror() prism60inside(thickness,slottabs,holes);
+	//translate([20+(x*25),55,0]) mirror() prism60inside(thickness,slottabs,holes);
 }
 
 module prism60inside(th,st,hs)

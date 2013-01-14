@@ -13,7 +13,7 @@ mnt_base_thickness = 6;	// need clearance for M4 screws to tnut
 overlap = 0.1;			// amount to overlap aluminum t-extrusion
 slot_tab_depth = 2;
 rod_radius = 4;
-offset_above_extrusion = 3;	// top of extrusion to rod-center
+offset_above_extrusion = 0;	// top of extrusion to rod-center
 m4_screw_edge_padding = 6;
 m4_screw_dia = m4_diameter;
 
