@@ -23,9 +23,6 @@ module polyhole(d,h) {
         cylinder(h = h, r = (d / 2) / cos (180 / n), $fn = n);
 }
 
-
-
-
 module roundcorner(diameter){
 	difference(){
 		cube(size = [diameter,diameter,99], center = false);

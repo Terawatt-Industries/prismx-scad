@@ -1,6 +1,4 @@
-// C. Strang		
-// cstrang@????
-// funfor.us
+// F. Beachler, Longevity Software LLC. d.b.a. Terawatt Industries
 
 include <configuration.scad>;
 
@@ -13,10 +11,10 @@ $fn=30;
 
 for (x = [0])
 {
-	translate([(x*25),0,0]) prism60inside(thickness,slottabs,holes);
+	translate([(x*25),0,0]) prism60inside_hotext(thickness,slottabs,holes);
 }
 
-module prism60inside(th,st,hs)
+module prism60inside_hotext(th,st,hs)
 {
 	difference() {
 		union() {

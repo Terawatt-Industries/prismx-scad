@@ -2,7 +2,7 @@
 // cstrang@????
 // funfor.us
 
-use <Y Motor Bracket.scad>;
+use <y-motor-bracket-univy.scad>;
 
 h = 6;   	// base thickness
 fmp = true;	// four mount points

@@ -1,3 +1,6 @@
+// f. beachler
+// longevity software d.b.a. terawatt industries
+
 use <thread-library.scad>;
 
 module part(sideA=true)	// true to create side A, false to create side B

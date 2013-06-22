@@ -1,23 +1,20 @@
-// C. Strang		
-// cstrang@????
-// funfor.us
+// C. Strang
+// F. Beachler, Longevity Software LLC. d.b.a. Terawatt Industries
 
 include <configuration.scad>;
 
 
-$fn=30;
+$fn=50;
 
 a = 30;								// parts angle
-partthickness = 6;			// part thickness
-screwdia = m4_diameter;	// hole diameter (i.e m3, m4, m5=5.1)
+partthickness = 5;			// part thickness
+screwdia = m4_diameter;		// hole diameter (i.e m3, m4, m5=5.1)
 slottabs = 2;					// slot tab depth (2 normal, -1 remove)
-o = 0.1;							// overlay for error free STLs
+o = 0.01;							// overlay for error free STLs
 
 prism60end(slottabs,screwdia,partthickness);
 
-
-
-module prism60end(sl,sc,pa)
+module prism60end(sl,sc,pa, o)
 {
 	translate([20,0,0]) rotate([0,0,a]) rail(sl,sc,pa);
 	translate([54.60,0,0]) rotate([0,0,-a]) mirror([1,0,0]) rail(sl,sc,pa);
@@ -52,13 +49,14 @@ module rail(st,sd,th)
 	difference()
 	{
 		cube([20,40,th]);
-		translate([10,10,-o]) cylinder(r=sd/2,h=2*o+th);
- 		translate([10,30,-o]) cylinder(r=sd/2,h=2*o+th);
+		screw_holes(st,sd,th);
 	}
 	translate([7.5,1,th-o]) cube([5,6.0,st+o]);
 	translate([7.5,13,th-o]) cube([5,14,st+o]);
 	translate([7.5,33,th-o]) cube([5,7,st+o]);
-
 }
 
- 
+module screw_holes(st,sd,th) {
+	translate([10,10,-o]) cylinder(r=sd/2,h=2*o+th);
+	translate([10,30,-o]) cylinder(r=sd/2,h=2*o+th);
+}

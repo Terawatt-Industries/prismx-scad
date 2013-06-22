@@ -1,19 +1,21 @@
 // C. Strang		
 // cstrang@????
 // funfor.us
+// f. beachler
+// longevity software d.b.a. terawatt industries
 
 
 include <configuration.scad>;
-use <y-motor-bracket.scad>;
+use <y-motor-bracket-univy.scad>;
 
 h = 8;   	// base thickness
 o = 0.1;	//  overlap amount
 w=6;			// wall thickness
 fmp = true;	// four mount points
 
-m3=m3_diameter ; 
-m4=m4_diameter ; 
-m8=smooth_bar_diameter_horizontal;
+m3 = m3_diameter; 
+m4 = m4_diameter; 
+m8 = smooth_bar_diameter_horizontal;
 
 $fn=30;
 
@@ -25,7 +27,7 @@ module zmotorbracket(zbh, zbf, zbw)
 {
 	difference()
 	{
-		translate([0,25,0]) nema17motormount(zbh,zbf);
+		translate([1.5,25,0]) nema17motormount(zbh,zbf);
 		translate([21,46,-o]) cylinder(r1=15,r2=12,h=5);
 	}
 	translate([0,0,0]) rotate([0,0,0]) zmountwalls(zbh,zbw);
@@ -50,12 +52,12 @@ module zmountwalls(zwh, zww)
 	difference()
 	{
 		cube([zww,24,20]);
-		translate([-o,12,10]) rotate([0,90,0]) cylinder(r=m4/2,h=zww+2*o);
+		translate([-o,10,12]) rotate([0,90,0]) cylinder(r=m4/2,h=zww+2*o);
 	}
 	translate([0,68,0]) difference()
 	{
 		cube([zww,24,20]);
-		translate([-o,12,10]) rotate([0,90,0]) cylinder(r=m4/2,h=zww+2*o);
+		translate([-o,14,12]) rotate([0,90,0]) cylinder(r=m4/2,h=zww+2*o);
 	}
 
 	translate([43,24-o,zwh-o]) cube([zww-1,44+2*o,7+o]);

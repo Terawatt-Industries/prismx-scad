@@ -1,6 +1,10 @@
 // C. Strang		
 // cstrang@????
 // funfor.us
+// f. beachler
+// longevity software d.b.a. terawatt industries
+
+include <metric.scad>;
 
 h = 5;   	// base thickness
 hh=6;
@@ -9,11 +13,9 @@ w=2.5;			// wall thickness
 fmp = true;	// four mount points
 st=2;
 
-include <metric.scad>;
-
-m3=m3_diameter ; 
-m4=m4_diameter ; 
-m8=smooth_bar_diameter_horizontal;
+m3=m3_diameter + 0.2; 
+m4=m4_diameter + 0.2; 
+m8 = smooth_bar_diameter_horizontal;
 
 $fn=30;
 
@@ -21,7 +23,7 @@ translate([0,0,0]) ymotormount();
 
 module ymotormount()
 {
-	translate([0, 4, 0]) rotate([0, 0, 0]) nema17motormount(h,fmp);
+	translate([0, 5, 0]) rotate([0, 0, 0]) nema17motormount(h,fmp);
 	translate([0, 10, 0]) rotate([0,0,0]) walls();
 }
 
@@ -94,8 +96,8 @@ module walls()
 	difference()
 	{
 			translate([h,42,0]) rotate([0,0,0]) cube([hh,20,20]);
-			translate([h-o,62,12.5]) rotate([atan(7.5/10),0,0]) cube([hh+2*o,20,25]);
-			translate([h-o,52,10]) rotate([0,90,0]) cylinder(r=m4/2,h=hh+2*o);
+			translate([h-o,62,12.5]) rotate([atan(1),0,0]) cube([hh+2*o,20,25]);
+			translate([h - o, 54, 12]) rotate([0,90,0]) cylinder(r = m4 / 2 , h = hh * 2 + 2*o);
 	}
 	// extrusion wall support
 	difference()
@@ -118,8 +120,9 @@ module walls()
 	difference()
 	{
 			translate([31,42,0]) rotate([0,0,0]) cube([hh,20,20]);
-			translate([31-o,62,12.5]) rotate([atan(7.5/7.5),0,0]) cube([hh+2*o,20,25]);
-			translate([31-o,52,10]) rotate([0,90,0]) cylinder(r=m4/2,h=hh+2*o);
+			translate([31-o,62,12.5]) rotate([atan(1),0,0]) cube([hh+2*o,20,25]);
+			// m4 screw hole
+			translate([31 - o, 54, 12]) rotate([0,90,0]) cylinder(r = m4 / 2, h = hh * 2 + 2*o);
 	}
 	// extrusion wall support
 	difference()
@@ -128,6 +131,6 @@ module walls()
 			translate([47,42-o,h]) rotate([0,-atan(10/15),0]) mirror([0,0,0]) cube([16,h+3*o,20]);
 	}
 	// t-slot guide
-	translate([18.5,42,0]) rotate([0,0,0]) cube([5, st, h + 10]);
+	translate([18.5,42,0]) rotate([0,0,0]) cube([5, st, h + 15]);
 }
 

@@ -1,15 +1,16 @@
-// C. Strang		
-// cstrang@????
-// funfor.us
+// f. beachler
+// longevity software d.b.a. terawatt industries
 
-use <Pulley_t-mxl-xl-htd-gt2_n-tooth.scad>;
+include <pulley_t-mxl-xl-htd-gt2_n-tooth.scad>;
 
-T5_pulley_dia = tooth_spaceing_curvefit (0.6523,1.591,1.064);
+teeth = 36;
+T5_pulley_dia = tooth_spaceing_curvefit (0.6523, 1.591, 1.064);
+GT2_2mm_pulley_dia = tooth_spacing (2, 0.254);
 
 zdrivenpulley();
 
 module zdrivenpulley();
 {
-	pulley ( "T5" , T5_pulley_dia , 1.19 , 3.264 );
-	translate([40,0,0]) pulley ( "T5" , T5_pulley_dia , 1.19 , 3.264 );
+	pulley ("GT2", GT2_2mm_pulley_dia, 0.764, 1.494);
+	//translate([40,0,0]) pulley ("GT2", GT2_2mm_pulley_dia, 0.764, 1.494);
 }

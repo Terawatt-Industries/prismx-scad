@@ -11,21 +11,21 @@
 
 // RODS
 
-threaded_rod_diameter = 8.2;
-threaded_rod_diameter_horizontal = 8.2;
+threaded_rod_diameter = 8;
+threaded_rod_diameter_horizontal = 8;
 smooth_bar_diameter = 8;
-smooth_bar_diameter_horizontal = 8.5;
+smooth_bar_diameter_horizontal = 8;
 
 // Nuts and bolts
 
-m8_diameter = 9;
-m8_nut_diameter = 16.4;
+m8_diameter = 8;
+m8_nut_diameter = 14.5;
 
-m4_diameter = 4.5;
-m4_nut_diameter = 9;
+m4_diameter = 4;
+m4_nut_diameter = 7.5;
 
-m3_diameter = 3.6;
-m3_nut_diameter = 6.1;
+m3_diameter = 3;
+m3_nut_diameter = 5;
 
 // Bushing holder
 
@@ -34,4 +34,4 @@ bushing_material_thickness = 1;
 
 // Motors
 
-motor_shaft = 5.5;
+motor_shaft = 5.1;

@@ -1,7 +1,8 @@
-// free beachler
+// f. beachler
+// longevity software d.b.a. terawatt industries
 
-bore_size = 22;
-pulley_dia = 30.1;
+bore_size = 22.2 + 0.3;
+pulley_dia = 29.1;
 pulley_width = 20;	// overall width including flange
 flange_height = 3;
 flange_width = 1.6;
@@ -9,13 +10,17 @@ flange_width = 1.6;
 module y_idler_pulley(id, od, w, fh, fw) {
 	difference() {
 		union() {
-			// pulley bore
-			translate([0, 0, fw]) cylinder(r = od / 2, h = w - fw * 2, $fn = 24);
+			// pulley wheel
+			translate([0, 0, fw - 0.01]) cylinder(r = od / 2, h = w - fw * 2 + 0.02, $fn = 50);
 			// flanges
-			cylinder(r = od / 2 + fh, h = fw, $fn = 24);
-			translate([0, 0, w - fw]) cylinder(r = od / 2 + fh, h = fw, $fn = 24);
+			cylinder(r = od / 2 + fh, h = fw, $fn = 50);
+			translate([0, 0, w - fw]) cylinder(r = od / 2 + fh, h = fw, $fn = 50);
 		}
-		translate([0, 0, -0.01]) cylinder(r = id / 2, h = w + 0.02, $fn = 24);
+		// bore - 2mm
+		translate([0, 0, -0.01]) cylinder(r = id / 2 - 2, h = w + 0.02, $fn = 50);
+		// 608 bore
+		translate([0, 0, -0.02]) cylinder(r = id / 2, h = 5, $fn = 50);
+		translate([0, 0, w - 5 + 0.01]) cylinder(r = id / 2, h = 5, $fn = 50);
 	}
 }
 

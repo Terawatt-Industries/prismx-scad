@@ -19,23 +19,20 @@ m4_screw_dia = m4_diameter;
 
 // CALCULATIONS
 rod_center_offset_vert = mnt_base_thickness / 2;
-clamp_rod_radius = rod_radius - 0.1;	// -0.1 diameter
+clamp_rod_radius = rod_radius;
 
 // RENDER
 $fn=30;
 
-translate([0,-15,-15]) yrodsupportclamp(holder_height, holder_width, mnt_base_thickness, overlap, slot_tab_depth, clamp_rod_radius, rod_center_offset_vert);
+translate([0,-15,-15]) yrodsupportclamp(holder_height, holder_width, mnt_base_thickness, overlap, slot_tab_depth, clamp_rod_radius, rod_center_offset_vert, m4_screw_dia);
 
-module yrodsupportclamp(yh, yw, ybt,yo,ystd,yrd,yrcov) 
+module yrodsupportclamp(yh, yw, ybt, yo, ystd, yrd, yrcov, m4) 
 {
 	difference() {
 		rodsupport(yh, yw, ybt,yo,ystd,yrd,yrcov);
 		// clamp screws
-		translate([10, 3 * yw / 8 + yrd / 4 - m4_diameter / 2, -0.01]) rotate([0, 0, 0]) cylinder(r=m4_diameter / 2, h=extrusion_width + offset_above_extrusion + yrd / 2 + (extrusion_width / 2 * sin(a)) + 0.01);
-		translate([10, yw - (3 * yw / 8 + yrd / 4 - m4_diameter / 2), -0.01]) rotate([0,0,0]) cylinder(r=m4_diameter / 2, h=extrusion_width + offset_above_extrusion + yrd / 2 + (extrusion_width / 2 * sin(a)) + 0.01);
-		// clamp washers for sqaure mounting
-		translate([10, 3 * yw / 8 + yrd / 4 - m4_diameter / 2, -0.01]) rotate([0, 0, 0]) cylinder(r=m4_diameter / 2, h=extrusion_width + offset_above_extrusion + yrd / 2 + (extrusion_width / 2 * sin(a)) + 0.01);
-		translate([10, yw - (3 * yw / 8 + yrd / 4 - m4_diameter / 2), -0.01]) rotate([0,0,0]) cylinder(r=m4_diameter / 2 + 1.7, h = 5);
+		translate([10, 3 * yw / 8 + yrd / 4 - m4 / 2, -0.01]) rotate([0, 0, 0]) cylinder(r=m4 / 2, h=extrusion_width + offset_above_extrusion + yrd / 2 + (extrusion_width / 2 * sin(a)) + 0.01);
+		translate([10, yw - (3 * yw / 8 + yrd / 4 - m4 / 2), -0.01]) rotate([0,0,0]) cylinder(r=m4 / 2, h=extrusion_width + offset_above_extrusion + yrd / 2 + (extrusion_width / 2 * sin(a)) + 0.01);
 	}
 }
 
@@ -45,6 +42,6 @@ module rodsupport(yh, yw, ybt, yo, ystd, yrd, yrcov)
 	difference()
 	{
 		translate([0, yw / 4, extrusion_width - (extrusion_width / 2 * sin(a))]) cube([ybt * 2 + extrusion_width * sin(a), yw / 2, offset_above_extrusion + yrd / 2 + (extrusion_width / 2 * sin(a))]);
-		translate([-0.01, yw / 2, extrusion_width + offset_above_extrusion + yrd / 2]) rotate([0,90,0]) cylinder(r=yrd,h=extrusion_width + 2 * yo + extrusion_width * sin(a));
+		translate([-0.01, yw / 2, extrusion_width + offset_above_extrusion + yrd / 2]) rotate([0,90,0]) cylinder(r=yrd, h=extrusion_width + 2 * yo + extrusion_width * sin(a));
 	}
 }
