@@ -1,18 +1,7 @@
-This source code is conveyed under the GPL v2.0 license.  The original source code is conveyed under the GPL v2.0 license.  This codebase contains modifications made by Terawatt Industries that are also licensed under GPL v2.0 license.
-
 The Prism Reprap is an open-source 3D printer originally designed by Buback on the RepRap Wiki (http://reprap.org/wiki/Prism).
+
+Build instructions (BOM to be published!) are over at the Reprap wiki at http://reprap.org/wiki/PrismX
 
 The original Prism design source-code was distributed for compatibility with Google Sketchup.  The code was generously ported to SCAD by Github's 'egenoup'.  The SCAD sources are the original fork for this codebase and can be found at https://github.com/egenoup/Prism-Reprap.
 
-All SCAD files are in /scad folder.  STL files are in /dist.
-
-
-Changes (version, changes):
-----------------------------------------
-aliceblue:
-Created project.
-Created new y-axis supports that rest on top of extrusion.
-Added placeholder for dedicated X and Z axes.  For now 'aliceblue' uses the X-Ends at https://bitbucket.org/terawattindustries/x-ends-mtsnr8-acetal.
-
-antiquewhite:
-?
+All SCAD files are in /scad folder.  STL files are in /dist/plates and /dist/stl.
