@@ -17,5 +17,6 @@ module plate1() {
 	for (x = [1, 2]) {
 		for (y = [1, 2]) {
 			translate([75 + (x*50), -65 + (y * 85), 0]) rotate([0, 0, 90]) prism60end();
+		}
 	}
 }

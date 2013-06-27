@@ -2,7 +2,7 @@
 
 use <heatbed.scad>;
 use <../moreparts/00str00der/src/00str00der.scad>;
-use <../moreparts/terawatt-terminal-mounts/src/mnt_psu.scad>;
+use <../moreparts/terawatt-terminal-mounts/src/mnt_4pin_5mmsterm.scad>;
 use <../moreparts/terawatt-terminal-mounts/src/mnt_pwr_sw.scad>;
 use <../moreparts/terawatt-terminal-mounts/src/mnt_atx_psu_brd.scad>;
 use <../moreparts/terawatt-terminal-mounts/src/mnt_ramps14_clip.scad>;

@@ -34,7 +34,7 @@ module walls(wth,wst,whs)
 	difference()
 	{
 		cube([ln,wth,20+wth]);
-		translate([8,-0.1,16]) rotate([-90,0,0]) cylinder(r=whs/2,h=7);
+		translate([10,-0.1,16]) rotate([-90,0,0]) cylinder(r=whs/2,h=7);
 	}
 
 	translate([ln,wth,0,]) rotate([0,0,210]) difference()
@@ -56,8 +56,8 @@ module base(bth,bhs)
 			translate([bth,50,-o]) rotate([0,0,-120]) mirror([1,0,0]) cube([10,25,bth+2*o]);
 
 			translate([trn,0,-o]) rotate([0,0,-30]) cube([10,15,6.5]);
-			translate([13,15+bth,-o]) cylinder(r=bhs/2,h=bth+2*o);
-			translate([13,35+bth,-o]) cylinder(r=bhs/2,h=bth+2*o);
+			translate([11,15+bth,-o]) cylinder(r=bhs/2,h=bth+2*o);
+			translate([11,35+bth,-o]) cylinder(r=bhs/2,h=bth+2*o);
 		}
 }
 
