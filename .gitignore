@@ -2,3 +2,4 @@
 **/.DS_Store
 **/*.gco
 **/*.gcode
+**/dist/stl/plates/heatbed.stl
