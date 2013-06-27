@@ -20,7 +20,7 @@ m3n = m3_nut_diameter;
 slim_xend_motor_mount(height, width, extension, rod_offset, rod_diameter, rod_spacing, z_bush_dia, mnt_screw_dia, mnt_screw_cap_dia, m3, m3n);
 % translate([height / 2, 47 + extension, 47 / 2 + 7.5]) rotate([0, 0, 0]) nema17(47);
 
-module slim_xend_motor_mount(h, w, e, ro, rd, rs, zbd, mntd, mcap, m3, m3n) {
+module slim_xend_motor_mount(h = height, w = width, e = extension, ro = rod_offset, rd = rod_diameter, rs = rod_spacing, zbd = z_bush_dia, mntd = mnt_screw_dia, mcap = mnt_screw_cap_dia, m3 = m3, m3n = m3n) {
 	difference() {
 		union() {
 			cube([h, w + 7.5, 7 + 3]);

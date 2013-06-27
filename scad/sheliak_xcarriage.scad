@@ -3,7 +3,7 @@
 
 include <configuration.scad>;
 use <lm8uu_mount_retainer.scad>;
-use <../../../uconduit/belt_extruder.scad>;
+use <../00str00der/00str00der.scad>;
 
 $fn=50;
 
@@ -17,7 +17,7 @@ belt_distance = 7;		// distance to nearest smooth rod
 m4 = m4_diameter;
 
 rotate([0, 180, $t * 360]) {
-slim_x_carriage(width, leadout, thickness, base_mnt_screw_sep, base_mnt_sep, smooth_rod_sep, m4);
+slim_x_carriage();
 
 // lm8uu mounts
 % for (y = [width / 2 - smooth_rod_sep / 2, width / 2 + smooth_rod_sep / 2]) {
@@ -86,7 +86,7 @@ translate([0,block_offset+17,-16.5]) rotate([0,90,0]) cylinder(r=3/2+0.2,h=100,c
 }
 /*** done extruder ***/
 
-module slim_x_carriage(width, leadout, thickness, base_mnt_screw_sep, base_mnt_sep, smooth_rod_sep, m4d) {
+module slim_x_carriage(width = width, leadout = leadout, thickness = thickness, base_mnt_screw_sep = base_mnt_screw_sep, base_mnt_sep = base_mnt_sep, smooth_rod_sep = smooth_rod_sep, m4d = m4) {
 	difference() {
 		slim_x_carriage_base(width, leadout, thickness, base_mnt_screw_sep, base_mnt_sep, smooth_rod_sep, m4d);
 		translate([47.5, 0, 0]) {

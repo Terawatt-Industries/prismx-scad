@@ -2,7 +2,7 @@
 // longevity software d.b.a. terawatt industries
 
 include <configuration.scad>;
-use <slim_xend.scad>;
+use <sheliak_xend.scad>;
 
 h = 6.55;   			// base thickness
 l = 30;			// leadout
@@ -16,7 +16,7 @@ $fn=30;
 
 topguidler(h, l, st, m, slot_od, slot_id);
 
-module topguidler(h, l, st, m, so, si)
+module topguidler(h = h, l = l, st = st, m = m, so = slot_od, si = slot_id)
 {
 	base(h, l, st, m, so, si);
 	translate([l / 2, 30, 0]) clamp(h, l, st, m, so, si);

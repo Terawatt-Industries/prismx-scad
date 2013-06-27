@@ -18,7 +18,7 @@ $fn=100;
 translate([0,0,0]) zleads(h, st, m, bushing_dia);
 //% translate([11, 17, 25]) zleads_bushing_retainer();
 
-module zleads(zlh,zls,zlm, bd)
+module zleads(zlh = h, zls = st, zlm = m, bd = bushing_dia)
 {
 	translate([0, 0, 0]) bearingholder(bd);
 	base(zlh,zls,zlm);

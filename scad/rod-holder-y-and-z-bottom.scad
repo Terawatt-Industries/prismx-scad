@@ -13,12 +13,16 @@ m3=m3_diameter;
 m3n=m3_nut_diameter;
 bar=smooth_bar_diameter_horizontal + o;
 
-$fn=30;
+$fn=50;
 
-yzrodholder(h, m, hh, m4, bar);
-rodholder_clamp(h + 2.0, m4, hh, bar);
+y_and_z_bottom();
 
-module yzrodholder(yzh,yzm,yzhh,yzn, bar)
+module y_and_z_bottom(h = h, m = m, hh = hh, m = m4, bar = bar) {
+	yzrodholder(h, m, hh, m4, bar);
+	rodholder_clamp(h + 2.0, m4, hh, bar);
+}
+
+module yzrodholder(yzh = h, yzm = m, yzhh = hh, yzn = m4, bar = bar)
 {
 	difference()
 	{
@@ -49,7 +53,7 @@ module marker(mm)
 	}
 }
 
-module rodholder(rhh, bar)
+module rodholder(rhh = hh, bar = bar)
 {
 	difference()
 	{
@@ -58,7 +62,7 @@ module rodholder(rhh, bar)
 	}
 }
 
-module rodholder_clamp(yzh, yzn, rhh, m8) {
+module rodholder_clamp(yzh = h + 2.0, yzn = m4, rhh = hh, m8 = bar) {
 	difference() {
 		translate([30, 6.875, 0]) rotate([0,0,0]) cube([20, 35.75, yzh + o]);	// 6.875 = 16.5 - 9.625
 		translate([30 - o, 6.875 + 35.75 / 2, yzh]) rotate([0, 90, 0]) cylinder(r = bar / 2 + o, h = 20 + 1);

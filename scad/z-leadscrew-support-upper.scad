@@ -18,7 +18,7 @@ $fn=100;
 
 translate([0,0,0]) zleads_upper(width, h, st, m, bushing_dia);
 
-module zleads_upper(w, zlh, zls, zlm, bd)
+module zleads_upper(w = width, zlh = h, zls = st, zlm = m, bd = bushing_dia)
 {
 	translate([0, w / 2 - 34, 0]) bearingholder(bd);
 	base(w, zlh, zls, zlm);

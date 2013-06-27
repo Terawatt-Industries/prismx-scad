@@ -26,7 +26,7 @@ leadscrew_nut_mnt_spacing = 16;
 //rotate([0, 0, $t * 360])
 slim_xend(height, width, rod_offset, rod_diameter, rod_spacing, z_bush_dia, leadscrew_nut_mnt_spacing, bearing_od, bearing_id, lm8uu_mnt_height, lm8uu_thickness, mount_screws, mnt_screw_thickness);
 
-module slim_xend(height, width, rod_offset, rod_diameter, rod_spacing, z_bush_dia, leadscrew_nut_mnt_spacing, bearing_od, bearing_id, lm8uu_mnt_height, lm8uu_thickness, mount_screws, mnt_screw_thickness) {
+module slim_xend(height = height, width = width, rod_offset = rod_offset, rod_diameter = rod_diameter, rod_spacing = rod_spacing, z_bush_dia = z_bush_dia, leadscrew_nut_mnt_spacing = leadscrew_nut_mnt_spacing, bearing_od = bearing_od, bearing_id = bearing_id, lm8uu_mnt_height = lm8uu_mnt_height, lm8uu_thickness = lm8uu_thickness, mount_screws = mount_screws, mnt_screw_thickness = mnt_screw_thickness) {
 	// TODO parametrize spacing between leadscrew and smooth rod
 	difference() {
 		union() {

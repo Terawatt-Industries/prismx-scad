@@ -9,12 +9,12 @@ bore_diameter = 8 + 0.75;
 wrench_height = 8;
 wrench_size = 13;
 
-translate([0, 0, 15])
-rotate([180,0,0])
 square_peg_round_hole(outer_diameter, bore_diameter, height, wrench_height, wrench_size);
 
-module square_peg_round_hole(od, bd, h, wh, ws)
+module square_peg_round_hole(od = outer_diameter, bd = bore_diameter, h = height, wh = wrench_height, ws = wrench_size)
 {
+translate([0, 0, 15])
+rotate([180,0,0])
 	difference()
 	{
 		cylinder(h = h, r1 = od / 2, r2 = od / 2, center = false, $fn = 24);

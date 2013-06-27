@@ -16,7 +16,7 @@ mnt_screw_cap_dia = 9.5 + 0.2;
 
 slim_xend_idler_mount(height, width, extension, rod_offset, rod_diameter, rod_spacing, z_bush_dia, mnt_screw_dia, mnt_screw_cap_dia);
 
-module slim_xend_idler_mount(h, w, e, ro, rd, rs, zbd, mst, mcap) {
+module slim_xend_idler_mount(h = height, w = width, e = extension, ro = rod_offset, rd = rod_diameter, rs = rod_spacing, zbd = z_bush_dia, mst = mnt_screw_dia, mcap = mnt_screw_cap_dia) {
 	difference() {
 		// base + wall
 		union() {

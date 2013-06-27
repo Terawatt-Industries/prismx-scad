@@ -12,10 +12,11 @@ raildia = m8_diameter;
 slottabs = -1;					// slot tab depth (2 normal, -1 remove)
 o = 0.01;							// overlay for error free STLs
 
-translate([0, 0, partthickness]) rotate([0, 180, 0]) prism60end_topvertex(slottabs, screwdia, partthickness, raildia);
+prism60end_topvertex(slottabs, screwdia, partthickness, raildia);
 
-module prism60end_topvertex(sl, sc, pa, rd)
+module prism60end_topvertex(sl = slottabs, sc = screwdia, pa = partthickness, rd = raildia)
 {
+translate([0, 0, partthickness]) rotate([0, 180, 0]) 
 	difference() {
 		union() {
 			translate([20,0,0]) rotate([0,0,a]) rail(sl,sc,pa, rd);

@@ -14,9 +14,9 @@ st = 2;					// slot tab depth 2=normal, -1=none
 $fn=50;
 
 yidler(h, w, m1, m2, adj_len, st);
-translate([-5,0,0]) mirror([1,0,0]) yidler(h, w, m1, m2, adj_len, st);
+//translate([-5,0,0]) mirror([1,0,0]) yidler(h, w, m1, m2, adj_len, st);
 
-module yidler(yih, yiw, yim, bim, adj, yst)
+module yidler(yih = h, yiw = w, yim = m1, bim = m2, adj = adj_len, yst = st)
 {
 	// FIXME move rotation outta here
 	translate([22.5, 2, 0]) rotate([90,0,180]) wall(yih, yim, yst, adj);
@@ -46,7 +46,7 @@ module wall(whh, wm, wst, adj)
 	}
 	// side walls
 	translate([-2.5, -o, 0]) cube([whh - 1.5, 20 + o, 25 + adj]);
-	translate([25 + 2.5, -o, 0]) cube([whh - 1.5, 20 + o, 25 + adj]);
+	translate([25 / 2 + 6, -o, 0]) cube([whh - 1.5, 20 + o, 25 + adj]);
 	// extrusion tab
 	translate([7.5, 0, -wst]) cube([5, 7.5, wst + o]);
 

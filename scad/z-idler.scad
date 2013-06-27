@@ -12,7 +12,9 @@ pulley_offset = 10;
 mnt_screw = m4_diameter;
 rod_diameter = m8_diameter;
 
-module z_idler_mount(width, leadout, slottabs, pulley_offset, mnt_screw, rod_diameter) {
+z_idler_mount(width, leadout, slottabs, pulley_offset, mnt_screw, rod_diameter);
+
+module z_idler_mount(width = width, leadout = leadout, slottabs = slottabs, pulley_offset = pulley_offset, mnt_screw = m4_diameter, rod_diameter = m8_diameter) {
 	difference() {
 	union() {
 	difference() {
@@ -38,4 +40,3 @@ module z_idler_mount(width, leadout, slottabs, pulley_offset, mnt_screw, rod_dia
 	}
 }
 
-z_idler_mount(width, leadout, slottabs, pulley_offset, mnt_screw, rod_diameter);

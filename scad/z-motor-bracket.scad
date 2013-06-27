@@ -17,13 +17,13 @@ m3 = m3_diameter;
 m4 = m4_diameter; 
 m8 = smooth_bar_diameter_horizontal;
 
-$fn=30;
+$fn=50;
 
 translate([0,0,0]) zmotorbracket(h,fmp,w);
 
 
 
-module zmotorbracket(zbh, zbf, zbw)
+module zmotorbracket(zbh = h, zbf = true, zbw = w)
 {
 	difference()
 	{

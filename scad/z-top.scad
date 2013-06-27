@@ -3,6 +3,7 @@
 // funfor.us
 // f. beachler
 // longevity software d.b.a. terawatt industries
+// OPTIONAL for PrismX - experimental - does not work with hotextrusion version
 
 include <configuration.scad>;
 

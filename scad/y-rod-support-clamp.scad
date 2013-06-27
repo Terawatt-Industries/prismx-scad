@@ -24,15 +24,17 @@ clamp_rod_radius = rod_radius;
 // RENDER
 $fn=30;
 
-translate([0,-15,-15]) yrodsupportclamp(holder_height, holder_width, mnt_base_thickness, overlap, slot_tab_depth, clamp_rod_radius, rod_center_offset_vert, m4_screw_dia);
+yrodsupportclamp(holder_height, holder_width, mnt_base_thickness, overlap, slot_tab_depth, clamp_rod_radius, rod_center_offset_vert, m4_screw_dia);
 
-module yrodsupportclamp(yh, yw, ybt, yo, ystd, yrd, yrcov, m4) 
+module yrodsupportclamp(yh = holder_height, yw = holder_width, ybt = mnt_base_thickness, yo = overlap, ystd = slot_tab_depth, yrd = clamp_rod_radius, yrcov = rod_center_offset_vert, m4 = m4_screw_dia) 
 {
-	difference() {
-		rodsupport(yh, yw, ybt,yo,ystd,yrd,yrcov);
-		// clamp screws
-		translate([10, 3 * yw / 8 + yrd / 4 - m4 / 2, -0.01]) rotate([0, 0, 0]) cylinder(r=m4 / 2, h=extrusion_width + offset_above_extrusion + yrd / 2 + (extrusion_width / 2 * sin(a)) + 0.01);
-		translate([10, yw - (3 * yw / 8 + yrd / 4 - m4 / 2), -0.01]) rotate([0,0,0]) cylinder(r=m4 / 2, h=extrusion_width + offset_above_extrusion + yrd / 2 + (extrusion_width / 2 * sin(a)) + 0.01);
+	translate([0,-15,-15]) {
+		difference() {
+			rodsupport(yh, yw, ybt,yo,ystd,yrd,yrcov);
+			// clamp screws
+			translate([10, 3 * yw / 8 + yrd / 4 - m4 / 2, -0.01]) rotate([0, 0, 0]) cylinder(r=m4 / 2, h=extrusion_width + offset_above_extrusion + yrd / 2 + (extrusion_width / 2 * sin(a)) + 0.01);
+			translate([10, yw - (3 * yw / 8 + yrd / 4 - m4 / 2), -0.01]) rotate([0,0,0]) cylinder(r=m4 / 2, h=extrusion_width + offset_above_extrusion + yrd / 2 + (extrusion_width / 2 * sin(a)) + 0.01);
+		}
 	}
 }
 
