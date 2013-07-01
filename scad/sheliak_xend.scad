@@ -9,7 +9,7 @@ $fn=40;
 height = 75;
 width = 50 + smooth_bar_diameter_horizontal + 2 * 7;
 rod_offset = 2;
-rod_diameter = smooth_bar_diameter_horizontal;
+rod_diameter = 7.75;
 rod_spacing = 50;
 z_bush_dia = 15 + 0.25;
 
