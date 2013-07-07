@@ -7,11 +7,17 @@ See src/README.txt for more details on printing PrismX parts.  Please read LICEN
 Directory Contents
 ------------------
 dist/ - contains STL versions of the OpenSCAD files in scad/, scad/plates
+
 moreparts/ - submodules used by PrismX such as 00str00der and others; original extras from the Prism Mendel
+
 scad/ - OpenSCAD design files including terawatt-prism.scad
+
 tools/ - java-based ANT build tools - not used yet
+
 molding/ - non-public repository
+
 build.xml - Java-based ANT build = automated compilation of SCAD files
+
 *.settings.properties - properties file used by ANT build
 
 Compile PrismX SCAD -> STL
