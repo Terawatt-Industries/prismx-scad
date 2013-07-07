@@ -22,7 +22,7 @@ build.xml - Java-based ANT build = automated compilation of SCAD files
 
 Compile PrismX SCAD -> STL
 --------------------------
-The PrismX comes with an automated ANT build system.  ANT is based on Java and runs on multiple OS platforms.  You will need Java 6+ and ANT to run the build from the command line.  If you cannot install this software, you can still compile SCAD files from within OpenSCAD or using your own command-line tools.
+The PrismX SCAD repository comes with an automated ANT build system.  ANT is based on Java and runs on multiple OS platforms.  You will need Java 6+ and ANT to run the build from the command line.  If you cannot install this software, you can still compile SCAD files from within OpenSCAD or using your own command-line tools.
 
 To see a list of available ANT targets with description type "ant -p" from the command line.
 
