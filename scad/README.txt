@@ -6,7 +6,7 @@ This folder contains all CAD design files for the PrismX 3D Printer.  These file
 There are optional and experimental parts in the /scad folder.  Some parts, such as the spool holder, have multiple options.  Some parts are not-recommended but remain to provide context and confuse us all.  Other optional parts are experimental.  Experimental parts differ from optional parts in that they are intended for an upcoming PrismX revision, and may become standard.
 
 /scad contains all the scad files used for printing and configuration.  It also contains optional and experimental parts.  
-/scad/plates contains sets of plates which comprise the entire PrismX printed bill of materials (BOM).  Optional plates are contained in their own plate(s)
+/scad/plates contains sets of plates which comprise the entire PrismX printed bill of materials (BOM).  Optional plates are contained in their own file(s) - i.e. optional parts are not mixed in with required parts in scad/plates.
 /scad/plates/README.TXT lists the plastic parts BOM.
 
 Printing Parts
