@@ -19,14 +19,14 @@ We recommend using two materials for printed kits.  ABS works well for the sheli
 
 Making Modifications
 --------------------
-Any pull requests should follow our published OpenScad Coding Conventions (http://blog.terawattindustries.com/2013/04/20/openscad-coding-conventions/).
+Any pull requests must consist of field-tested parts or design modifications.  Code modifications should follow our published OpenScad Coding Conventions (http://blog.terawattindustries.com/2013/04/20/openscad-coding-conventions/).
 
 Also, the PrismX OpenSCAD code follows these conventions to maintain a consistently high degree of modularity (and parametrization).  Pull requests to this project should also follow these conventions:
 1)  Every module's declaration should contain all of the variables used within the module, and by all of its submodules(!).  This is so we can customize every module and submodule, and ultimately this affords better code reusability.
 2)  Variables in a module's declaration should have defaults defined in the file or in an <include>.  The point is to be able to call module() to get the default part, or module(params…) to get a customized part.
 3)  Machine-wide globals can be overriden in configuration.scad.
 
-Finally, use terawatt-prism.scad to model your changes and for (limited) virtual motion testing.
+Finally, use terawatt-prism.scad to model your changes and for (limited) virtual motion testing.  Again, only tested modifications will be considered seriously.
 
 terawatt-prism.scad
 -------------------
