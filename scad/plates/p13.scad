@@ -1,7 +1,7 @@
 // F. Beachler, Longevity Software LLC. d.b.a. Terawatt Industries
 
 use <heatbed.scad>;
-use <../moreparts/terawatt-terminal-mounts/src/mnt_psu.scad>;
+use <../../moreparts/terawatt-pro-power/src/mnt_psu.scad>;
 
 $fn=50;
 
@@ -9,5 +9,5 @@ $fn=50;
 plate1();
 
 module plate1() {
-	// TODO implement
+	translate([50, 10, 0]) power_mount(5.1, 8.2, 3.2);
 }
