@@ -21,9 +21,9 @@ module plate1() {
 	translate([180, 120, 0]) rotate([0, 0, 90]) term_mnt_atx_psubrd();
 	translate([120, 20, 0]) term_mnt_ramps14();
 	for (y = [90, 135]) {
-		translate([80, y, 0]) nut_clamp_pair(20, 4, 3);
+		translate([80, y, 10]) nut_clamp_pair(20, 4, 3);
 	}
 	for (x = [35, 85]) {
-		translate([x, 45, 0]) nut_clamp_pair(20, 4, 3);
+		translate([x, 45, 10]) nut_clamp_pair(20, 4, 3);
 	}
 }
