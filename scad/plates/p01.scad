@@ -3,7 +3,8 @@
 use <heatbed.scad>;
 use <../y-motor-bracket-univy.scad>;
 use <../y-rod-support.scad>;
-use <../y-rod-support-clamp.scad>;
+use <../sheliak_xend_idler_mount.scad>;
+use <../sheliak_xend_motor_mount.scad>;
 
 $fn=50;
 
@@ -16,8 +17,6 @@ module plate1() {
 		translate([o, 100, 0]) yrodsupport();
 	}
 	translate([30, 120, 0]) rotate([0, 0, -90]) ymotormount();
-	for (o = [50, 80]) {
-		translate([o, 35, 0]) yrodsupportclamp();
-		translate([o, 140, 0]) yrodsupportclamp();
-	}
+	translate([60, 25, 0]) slim_xend_idler_mount();
+	translate([60, 130, 0]) slim_xend_motor_mount();
 }

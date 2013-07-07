@@ -3,8 +3,8 @@
 use <heatbed.scad>;
 use <../rod-holder-y-and-z-bottom.scad>;
 use <../sheliak_xcarriage.scad>;
-use <../sheliak_xend_idler_mount.scad>;
-use <../sheliak_xend_motor_mount.scad>;
+use <../../moreparts/00str00der/src/00str00der.scad>;
+use <../y-rod-support-clamp.scad>;
 
 $fn=50;
 
@@ -12,9 +12,12 @@ $fn=50;
 plate1();
 
 module plate1() {
-	translate([85, 75, 0]) rotate([0, 0, 180]) rodholder_clamp();
-	translate([110, 75, 0]) rotate([0, 0, 180]) rodholder_clamp();
-	translate([170, 175, 0]) rotate([0, 0, 180]) slim_x_carriage();
-	translate([30, 80, 0]) slim_xend_idler_mount();
-	translate([30, 135, 0]) slim_xend_motor_mount();
+	translate([70, 75, 0]) rotate([0, 0, 180]) rodholder_clamp();
+	translate([95, 75, 0]) rotate([0, 0, 180]) rodholder_clamp();
+	translate([180, 175, 0]) rotate([0, 0, 180]) slim_x_carriage();
+	translate([92, 95, 30]) 00str00der();
+	for (o = [15, 45]) {
+		translate([o, 75, 0]) yrodsupportclamp();
+		translate([o, 115, 0]) yrodsupportclamp();
+	}
 }
