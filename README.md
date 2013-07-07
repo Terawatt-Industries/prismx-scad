@@ -24,6 +24,8 @@ Compile PrismX SCAD -> STL
 --------------------------
 The PrismX SCAD repository comes with an automated ANT build system.  ANT is based on Java and runs on multiple OS platforms.  You will need Java 6+ and ANT to run the build from the command line.  If you cannot install this software, you can still compile SCAD files from within OpenSCAD or using your own command-line tools.
 
-To see a list of available ANT targets with description type "ant -p" from the command line.
+Type "ant -p" from the command line to see a list of available ANT targets with description.
+
+Type "ant" to compile scad/plates/*.scad -> dist/plates/*.stl
 
 NOTE:  References to the phrase "default configuration" mean the PrismX for M4 hardware and LM8UU bearings.  Additional configurations are planned.
