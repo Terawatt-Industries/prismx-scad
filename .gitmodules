@@ -1,3 +1,15 @@
 [submodule "molding"]
 	path = molding
 	url = git@bitbucket.org:terawattindustries/prism-molded.git
+[submodule "moreparts/terawatt-pro-power"]
+	path = moreparts/terawatt-pro-power
+	url = https://github.com/Terawatt-Industries/reprap-pro-power.git
+[submodule "moreparts/nut-clamps"]
+	path = moreparts/nut-clamps
+	url = https://github.com/Terawatt-Industries/nut-clamps-for-20mm-extrusion.git
+[submodule "moreparts/00str00der"]
+	path = moreparts/00str00der
+	url = https://github.com/Terawatt-Industries/00str00der.git
+[submodule "moreparts/filament-spool-holder"]
+	path = moreparts/filament-spool-holder
+	url = https://github.com/Terawatt-Industries/sheliak-spool-holder.git
