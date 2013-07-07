@@ -19,13 +19,12 @@ use <y-idler-pulley.scad>;
 use <lm8uu_mount_retainer.scad>;
 use <z-motor-bracket.scad>;
 use <rod-holder-y-and-z-bottom.scad>;
-use <rod-holder-z-top.scad>;
-use <z-lead-screw-support.scad>;
-use <z-lead-screw-support-upper.scad>;
-use <slim_xend.scad>;
-use <slim_xcarriage.scad>;
+use <z-top.scad>;
+use <z-leadscrew-support.scad>;
+use <z-leadscrew-support-upper.scad>;
+use <sheliak_xend.scad>;
+use <sheliak_xcarriage.scad>;
 use <filament-guidler-top.scad>;
-use <pulley_t-mxl-xl-htd-gt2_n-tooth.scad>;
 use <pulley.scad>;
 use <nema.scad>;
 
@@ -73,20 +72,20 @@ module gantry_lower(pw, pd, es) {
 	translate([0, 0, -es / 2]) {
 		union() {
 			translate([pw / 2 + es, -pd / 2 + es / 2, 0]) rotate([0, 0, 90]) prism90(12, 2, 5, 0);
-			translate([pw / 2 + es, -pd / 2 + es / 2, 12 / 2]) rotate([180, 0, 90]) prism90spacer(20, -1, 5, 0);
+			translate([pw / 2 + es, -pd / 2 + es / 2, 12 / 2]) rotate([180, 0, 90]) prism90spacer(mirr = false);
 		}
 		union() {
 			translate([pw / 2 + es, pd / 2 + es / 2, 0]) rotate([0, 0, 90]) mirror() prism90(12, 2, 5);
-			translate([pw / 2 + es, pd / 2 + es / 2 + 3, 12 / 2]) rotate([180, 0, 90]) prism90spacer(20, -1, 5, 1);
+			translate([pw / 2 + es, pd / 2 + es / 2 + 3, 12 / 2]) rotate([180, 0, 90]) prism90spacer(mirr = true);
 		}
 		mirror() {
 			union() {
 				translate([pw / 2 + es, -pd / 2 + es / 2, 0]) rotate([0, 0, 90]) prism90(12, 2, 5);
-				translate([pw / 2 + es, -pd / 2 + es / 2, 12 / 2]) rotate([180, 0, 90]) prism90spacer(20, -1, 5, 0);
+				translate([pw / 2 + es, -pd / 2 + es / 2, 12 / 2]) rotate([180, 0, 90]) prism90spacer(mirr = false);
 			}
 			union() {
 				translate([pw / 2 + es, pd / 2 + es / 2, 0]) rotate([0, 0, 90]) mirror() prism90(12, 2, 5);
-				translate([pw / 2 + es, pd / 2 + es / 2, 12 / 2]) rotate([180, 0, 90]) mirror() prism90spacer(20, -1, 5, 0);
+				translate([pw / 2 + es, pd / 2 + es / 2 + 3, 12 / 2]) rotate([180, 0, 90]) prism90spacer(mirr = true);
 			}
 		}
 	}	// done feet
@@ -121,7 +120,7 @@ module prism_y_axis(pw, pd, es) {
 	for (y = [20, -80]) {
 		translate([-pd / 2, y, 0]) {
 			yrodsupport(20, 60, 6, 0.1, 2, 4 - 0.1, 6 / 2);
-			translate([0, 0, es * 2 + 8 / 2 + 4]) mirror([0, 0, 1])
+			translate([0, 15, es * 2 - 8]) mirror([0, 0, 1])
 				yrodsupportclamp(20, 60, 6, 0.1, 2, 4 - 0.1, 6 / 2);
 			translate([-3, 30, es + 6 / 2]) rotate([0, 90, 0]) smooth_rod(8, 406);
 		}
@@ -130,7 +129,7 @@ module prism_y_axis(pw, pd, es) {
 		for (y = [20, -80]) {
 			translate([-pd / 2, y, 0]) {
 				yrodsupport(20, 60, 6, 0.1, 2, 4 - 0.1, 6 / 2);
-				translate([0, 0, es * 2 + 8 / 2 + 4]) mirror([0, 0, 1])
+				translate([0, 15, es * 2 - 8]) mirror([0, 0, 1])
 					yrodsupportclamp(20, 60, 6, 0.1, 2, 4 - 0.1, 6 / 2);
 			}
 		}
@@ -148,7 +147,7 @@ module prism_z_axis(pw, pd, es) {
 		//translate([0, 0, pd - 70]) rotate([0, 180, 90]) ztopholder(4, 6, 6, -1, 5, 8);
 		union() {
 			translate([12.5, 8, pd - 45]) {
-				rotate([-90, 0, 180]) prism60end_topvertex(-1, 4, 4.5);
+				translate([0, -4.5, 0]) rotate([-90, 0, 0]) prism60end_topvertex(-1, 4, 4.5);
 				translate([0, -4.5, 0]) rotate([-90, 0, 180]) prism60end_spacer(4, 4, 3.5);
 				translate([-12.5, 14 - 8, -75]) rotate([0, -90, 90]) rodholder_clamp(4.5, 4, 4.1);
 			}
@@ -164,7 +163,7 @@ module prism_z_axis(pw, pd, es) {
 		//translate([0, 0, pd - 70]) rotate([0, 180, 90]) ztopholder(4, 6, 6, -1, 5, 8);
 		union() {
 			translate([12.5, 8, pd - 45]) {
-				rotate([-90, 0, 180]) prism60end_topvertex(-1, 4, 4.5);
+				translate([0, -4.5, 0]) rotate([-90, 0, 0]) prism60end_topvertex(-1, 4, 4.5);
 				translate([0, -4.5, 0]) rotate([-90, 0, 180]) prism60end_spacer(4, 4, 3.5);
 				translate([-12.5, 14 - 8, -75]) rotate([0, -90, 90]) rodholder_clamp(4.5, 4, 4.1);
 			}
@@ -218,7 +217,7 @@ module universal_y_plate_with_heatbed(pw, pd, es, ycoord) {
 	color([1, 0, 0]) translate([-ycoord + 15 / 2, -215 / 2, es + 20 / 2 + 10 + 20]) rotate([0, 0, 0]) cube([215, 215, 2]);
 }
 
-module terawatt_prism(pw, pd, es) {
+module terawatt_prism(pw = prism_width, pd = prism_depth, es = extrusion_size) {
 	gantry_lower(pw, pd, es);
 	gantry_upper(pw, pd, es);
 	prism_top(pw, pd, es, 200, 180);
