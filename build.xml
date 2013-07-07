@@ -4,7 +4,7 @@
     <!-- initialize some props -->
     <property name="proj" value="prismx" />
     <property name="build-tools-dir-name" value="tools/build" />
-    <property name="src-dir" value="${basedir}/src" />
+    <property name="src-dir" value="${basedir}/scad" />
     <property name="dist-dir" value="${basedir}/dist" />
 
     <tstamp>
@@ -80,7 +80,7 @@
 
     <target name="zip-dist-files" depends="pkg-dist-files" description="ZIP the TAR distribution">
 		<property name="tar-filename" value="${dist-dir}/${proj}-dist"/>
-        <zip destfile="${dist-dir}/x_ends_terawatt.zip">
+        <zip destfile="${dist-dir}/prismx.zip">
             <tarfileset src="${tar-filename}.tar"/>
         </zip>
     </target>
@@ -90,22 +90,12 @@
         <mkdir dir="./${dist-dir}"/>
     </target>
 
-	<target name="compile-prismx-machine-model-default-config" description="compile scad/terawatt-prismx.scad -> dist/stl/terawatt-prismx.stl with default configuration">
-        <fl:let>
-            d = file('./scad');
-        </fl:let>
-        <fl:for var="name" in="d.list">
-            <fl:switch value="#{name}">
-                <re expr="^\./scad/terawatt\-prism\.scad" var="m">
-                <echo message="compiling #{m} to STL :: " />
-                <exec executable="${exec.path.oscad}">
-                    <arg line="-o ${dist-dir}/stl/#{m[2]}.stl" />
-                    <arg line="-D 'quality=&quot;production&quot;'" />
-                    <arg line="#{m}" />
-                </exec>
-                </re>
-            </fl:switch>
-        </fl:for>
+    <target name="compile-prismx-machine-model-default-config" description="compile scad/terawatt-prismx.scad -> dist/stl/terawatt-prismx.stl with default configuration">
+         <exec executable="${exec.path.oscad}">
+               <arg line="-o ${dist-dir}/stl/prismx.stl" />
+               <arg line="-D 'quality=&quot;production&quot;'" />
+               <arg line="${src-dir}/prismx.scad" />
+         </exec>
     </target>
 
 	<target name="compile-plates-stl" description="compile scad/plates/*.scad -> dist/plates/*.stl">
