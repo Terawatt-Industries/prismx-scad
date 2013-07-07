@@ -5,7 +5,7 @@
 
 include <configuration.scad>;
 // FIXME use or remove from this project
-use <z-lead-screw-support-retainer.scad>;
+use <z-leadscrew-support-retainer.scad>;
 
 width = 135;			// end-to-end width at corners
 h = 6;   			// base thickness

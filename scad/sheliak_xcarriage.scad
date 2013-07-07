@@ -3,7 +3,7 @@
 
 include <configuration.scad>;
 use <lm8uu_mount_retainer.scad>;
-use <../00str00der/00str00der.scad>;
+use <../moreparts/00str00der/src/00str00der.scad>;
 
 $fn=50;
 
