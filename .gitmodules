@@ -13,3 +13,6 @@
 [submodule "moreparts/filament-spool-holder"]
 	path = moreparts/filament-spool-holder
 	url = https://github.com/Terawatt-Industries/sheliak-spool-holder.git
+[submodule "moreparts/fan-mounts"]
+	path = moreparts/fan-mounts
+	url = https://github.com/Terawatt-Industries/any-size-fan-mount.git
