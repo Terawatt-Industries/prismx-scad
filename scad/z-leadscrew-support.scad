@@ -5,7 +5,7 @@
 
 include <configuration.scad>;
 // FIXME use or remove from this project
-use <z-lead-screw-support-retainer.scad>;
+use <z-leadscrew-support-retainer.scad>;
 
 h = 6;   			// base thickness
 o = 0.1;			//  overlap amount
