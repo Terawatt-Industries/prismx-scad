@@ -2,7 +2,9 @@ The PrismX 3D Printer - fast, reliable, precise, and affordable.
 
 This repository contains the CAD design files for the PrismX 3D Printer.
 
-See src/README.txt for more details on printing PrismX parts.  Please read LICENSE and NOTICE.TXT for licensing details.
+Getting Started
+---------------
+See src/README.txt for more details on printing PrismX parts.  Please read LICENSE and NOTICE.TXT for licensing details.  The complete PrismX 3D Printer bill of materials is published at http://bit.ly/tw-prismx-bom-1.
 
 Directory Contents
 ------------------
@@ -29,3 +31,9 @@ Type "ant -p" from the command line to see a list of available ANT targets with 
 Type "ant" to compile scad/plates/*.scad -> dist/plates/*.stl
 
 NOTE:  References to the phrase "default configuration" mean the PrismX for M4 hardware and LM8UU bearings.  Additional configurations are planned.
+
+Additional Resources
+--------------------
+http://bit.ly/prismx3dprinter
+http://bit.ly/tw-prismx-bom-1
+http://bit.ly/terawatt
