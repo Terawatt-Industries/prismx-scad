@@ -107,7 +107,7 @@
                 <re expr="^(\./scad/plates)(.*)\.scad" var="m">
                 <echo message="compiling #{m} to STL :: " />
                 <exec executable="${exec.path.oscad}">
-                    <arg line="-o ${dist-dir}/plates/#{m[2]}.stl" />
+                    <arg line="-o ${dist-dir}/stl/plates/#{m[2]}.stl" />
                     <arg line="-D 'quality=&quot;production&quot;'" />
                     <arg line="#{m}" />
                 </exec>

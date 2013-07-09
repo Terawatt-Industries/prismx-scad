@@ -23,7 +23,7 @@ plate #		| contents
 --------------------------------
 total		| 82 parts
 
-Remember to print 2x of plate#7!
+Remember to print 2x of plate #7!
 
 Filament Spool Holder
 ---------------------
