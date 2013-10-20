@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-See dist/stl/plates/README.txt for a breakdown of everything in these SCADs.
-=======
 PrismX 3D Printer
 Plates SCAD Readme
 ----------------------------------------
@@ -41,5 +38,3 @@ spool_holder_feet.stl - 2x (for PrismX)
 spool_holder_mnt_attach.stl - 1x (for PrismX)
 
 total = 8 parts
-
->>>>>>> 323aef75b5a8ee7ae9246fa21c5f07af8f17d46f
