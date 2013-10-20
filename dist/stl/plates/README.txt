@@ -18,8 +18,9 @@ plate #		| contents
 10 (pla)	| 4x prism90 (2 mirrored, 2 not-mirrored)
 11 (pla)	| 4x prism90spacer (2 mirrored, 2 not-mirrored) 
 12 (pla/abs)	| 1x psu_mnt
-13 (pla/abs}	| 1x term_mnt_5mm_2hole; 1x power_switch_mount; 1x term_mnt_atx_psubrd; 1x term_mnt_ramps14
-14 (pla/abs}	| 5x nut_clamp_pair; 2x 80mm fan mount for extrusion; 1x 40mm fan mount for extrusion; 1x Brix 40mm fan mount for x-carriage;
+13 (pla/abs)	| 1x term_mnt_5mm_2hole; 1x power_switch_mount; 1x term_mnt_atx_psubrd; 1x term_mnt_ramps14
+14 (pla/abs)	| 5x nut_clamp_pair; 2x 80mm fan mount for extrusion; 1x 40mm fan mount for extrusion; 1x Brix 40mm fan mount for x-carriage;
+15 (pla/abs)	| 1x filament_spool_holder
 --------------------------------
 total		| 82 parts
 
@@ -27,7 +28,7 @@ Remember to print 2x of plate #7!
 
 Filament Spool Holder
 ---------------------
-You'll also need the filament spool holder!  Currently we have a detached version, and a much more compact/attached version is on the way.
+The plates set now includes a filament spool holder that attaches to the frame-base.  We also have a detached version but the parts are in their own folder (in their own repository, linked to this one at hardware/prismx/moreparts).  Again, we strongly recommend the parasitic holder because the footprint of the detached one is much larger.  If you want a detached one the parts are:
 
 file - count
 ------------
