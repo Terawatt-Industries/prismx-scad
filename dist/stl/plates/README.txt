@@ -24,7 +24,17 @@ plate #		| contents
 --------------------------------
 total		| 82 parts
 
-note:  If heatbed.stl is there - don't print it - it shouldn't be getting compiled!
+Notes:
+- If heatbed.stl is there - don't print it - it shouldn't be getting compiled!
+- Parts calibration is a key to proper assembly and great machine performance.  The best way to get proper parts calibration is with a well-calibrated extruder and printer.  Consider setting your printer up with an 00str00der before you print these parts - unless you already know you printer's calibration is very accurate.  You can use the 00str00der adapter plate for Kuehling's X-carriage and re-use the 00str00der for your PrismX assembly.
+- Z-calibration is important in terms of printing parts that are vertically straight.  Many parts are short to minimize this but it's still important.
+- Part sets for linear bearings and acetal bushings are for press-fit part tolerances.  It is OK if you have to use a (soft) mallet or a press to assemble the part.  It is not OK to have the bearing or bushing move around or slide out of the holder.  If you don't have an 00str00der you can tweak the corresponding SCAD file (usually the "o" variable), re-compile, and re-slice.
+- Recommended slicing settings:  50% honeycomb infill, 5 perimeters, 200 micron layer height, 10 solid layers top/bottom
+- p#8 The 00str00der should be printed with 90%+ rectilinear infill.  This plate should be printed in ABS since it holds the hotend.
+- p#12 (the PSU mount) is large and barely fits on a 200mm bed - A 1mm or no brim is recommended.
+- p#13 There's still a little hacking to get your PCBs mounted on these.
+- p#14 Contains all post-assembly parts.
+
 
 Remember to print 2x of plate #7!
 
