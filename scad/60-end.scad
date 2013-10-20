@@ -12,9 +12,9 @@ screwdia = m4_diameter;		// hole diameter (i.e m3, m4, m5=5.1)
 slottabs = 2;					// slot tab depth (2 normal, -1 remove)
 o = 0.01;							// overlay for error free STLs
 
-prism60end(slottabs,screwdia,partthickness);
+prism60end(slottabs, screwdia, partthickness, o);
 
-module prism60end(sl,sc,pa, o)
+module prism60end(sl = slottabs, sc = screwdia, pa = partthickness, o = o)
 {
 	translate([20,0,0]) rotate([0,0,a]) rail(sl,sc,pa);
 	translate([54.60,0,0]) rotate([0,0,-a]) mirror([1,0,0]) rail(sl,sc,pa);

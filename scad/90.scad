@@ -14,7 +14,7 @@ $fn=30;
 
 prism90(h, t, 5, m4, 0);
 
-module prism90(th, st, hd, m4, mirr) {
+module prism90(th = h, st = t, hd = 5, m4 = m4, mirr = false) {
 	if (!mirr) {
 		translate([0, 0, 0]) px90(th, st, 5, m4);
 	} else {

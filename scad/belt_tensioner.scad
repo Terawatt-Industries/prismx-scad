@@ -21,7 +21,7 @@ belt_clamp_clamp_height=tooth_height+belt_clamp_thickness*1.75;
 
 belt_clamps(belt_clamp_width, belt_clamp_clamp_height, belt_clamp_channel_height);
 
-module belt_clamps(bcw, clmph, chnh, sd) {
+module belt_clamps(bcw = belt_clamp_width, clmph = belt_clamp_clamp_height, chnh = belt_clamp_channel_height, sd = sd) {
 	for (i=[-1, 0])
 		translate([0,i*(bcw + 1),0])
 	belt_clamp(clmph, sd);

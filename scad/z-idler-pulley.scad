@@ -10,7 +10,10 @@ pulley_width = 12;	// overall width including flange
 flange_height = 3;
 flange_width = 1.6;
 
-module z_idler_pulley(id, od, w, fh, fw) {
+z_idler_pulley(bore_size, pulley_dia, pulley_width, flange_height, flange_width);
+//translate([40, 0, 0]) m4_608_bushing();
+
+module z_idler_pulley(id = bore_size, od = pulley_dia, w = pulley_width, fh = flange_height, fw = flange_width) {
 	difference() {
 		union() {
 			// pulley wheel
@@ -38,5 +41,3 @@ module m4_608_bushing() {
 	}
 }
 
-z_idler_pulley(bore_size, pulley_dia, pulley_width, flange_height, flange_width);
-//translate([40, 0, 0]) m4_608_bushing();

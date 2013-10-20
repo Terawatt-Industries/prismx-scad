@@ -27,12 +27,13 @@ $fn=30;
 
 translate([0, 0, 0]) z_endstop(holder_height, holder_width, mnt_base_thickness, overlap, slot_tab_depth, clamp_rod_radius, rod_center_offset_vert, m4, m3);
 
-module z_endstop(yh, yw, ybt, yo, ystd, yrd, yrcov, m4, m3) 
+module z_endstop(yh = holder_height, yw = holder_width, ybt = mnt_base_thickness, yo = overlap, ystd = slot_tab_depth, yrd = clamp_rod_radius, yrcov = rod_center_offset_vert, m4 = m4, m3 = m3) 
 {
 	
 	difference() {
 		union() {
-			translate([0, -15, -15]) yrodsupportclamp(yh, yw, ybt, yo, ystd, yrd, yrcov, m4);
+			translate([0, 10, 0]) yrodsupportclamp(yh, yw, ybt, yo, ystd, yrd, yrcov, m4);
+			translate([0, 50, 0]) yrodsupportclamp(yh, yw, ybt, yo, ystd, yrd, yrcov, m4);
 			translate([-2.5 - 0.75, -15 + 2.5, 0]) {
 				minkowski() {
 					cube([yh + 10 - 1.5, 15 - 1.5, ybt + 1]);

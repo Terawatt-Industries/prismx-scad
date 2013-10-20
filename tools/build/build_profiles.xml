@@ -1,0 +1,27 @@
+<profiles>
+	<!-- 
+	SCAD XML profile definition file.
+
+	OpenSCAD ANT Build by Free Beachler, Longevity Software DBA Terawatt Industries is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+	-->
+	<!-- 
+	<profile>
+		<id>profile-idler-acetal</id>
+		<properties>
+			<method>assembly</method>				
+			<part>0</part>	
+			<mode>0</mode>
+            <bearing>0</bearing>
+            <zstop>true</zstop>
+		</properties>
+	</profile> -->
+	<profile>
+		<id>prismx-orig</id>
+		<properties>
+			<output-dir>stl/prismx</output-dir>
+			<method>assembly</method>
+            <bearing>0</bearing>
+            <zstop>true</zstop>
+		</properties>
+	</profile>
+</profiles>

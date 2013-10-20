@@ -7,7 +7,9 @@ pulley_width = 20;	// overall width including flange
 flange_height = 3;
 flange_width = 1.6;
 
-module y_idler_pulley(id, od, w, fh, fw) {
+y_idler_pulley(bore_size, pulley_dia, pulley_width, flange_height, flange_width);
+
+module y_idler_pulley(id = bore_size, od = pulley_dia, w = pulley_width, fh = flange_height, fw = flange_width) {
 	difference() {
 		union() {
 			// pulley wheel
@@ -23,6 +25,4 @@ module y_idler_pulley(id, od, w, fh, fw) {
 		translate([0, 0, w - 5 + 0.01]) cylinder(r = id / 2, h = 5, $fn = 50);
 	}
 }
-
-y_idler_pulley(bore_size, pulley_dia, pulley_width, flange_height, flange_width);
 

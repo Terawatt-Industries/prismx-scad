@@ -56,6 +56,7 @@ module prism60inside_top_armor(th, st, hs, supp)
 	if (supp) {
 		for (x = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 63]) {
 			translate([-20, x, -0.1]) cube([19, 1, 5]);
+		}
 	}
 }
 

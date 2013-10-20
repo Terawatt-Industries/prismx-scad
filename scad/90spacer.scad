@@ -15,7 +15,7 @@ $fn=30;
 
 prism90spacer(h, t, 5, m4, 0);
 
-module prism90spacer(th, st, hd, m4, mirr) {
+module prism90spacer(th = h, st = t, hd = 5, m4 = m4, mirr = false) {
 	rotate([180, 0, 0]) {
 		if (!mirr) {
 			translate([0, 0, -h]) pxspacer(th, st, hd, m4);

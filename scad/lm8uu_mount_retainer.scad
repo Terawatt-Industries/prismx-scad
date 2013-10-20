@@ -17,7 +17,7 @@ base_mnt_sep = 35;
 
 lm8uu_mount_retainer(mnt_od, mnt_id, lm8uu_mnt_height, lm8uu_thickness, mount_screws, mnt_screw_dia, base, base_thickness, base_mnt_sep);
 
-module lm8uu_mount_retainer(lo, li, h, t, mnt, mntd, base, bt, bmntsep, boreoffset = true) {
+module lm8uu_mount_retainer(lo = mnt_od, li = mnt_id, h = lm8uu_mnt_height, t = lm8uu_thickness, mnt = mount_screws, mntd = mnt_screw_dia, base = base, bt = base_thickness, bmntsep = base_mnt_sep, boreoffset = true) {
 	difference() {
 		union() {
 			if (!base) {

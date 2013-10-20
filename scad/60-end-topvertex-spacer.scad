@@ -15,7 +15,7 @@ prism60end_spacer(slottabs,screwdia,partthickness);
 
 
 
-module prism60end_spacer(sl,sc,pa)
+module prism60end_spacer(sl = slottabs, sc = screwdia, pa = partthickness)
 {
 	difference() {
 	union() {

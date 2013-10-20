@@ -27,7 +27,7 @@ $fn=30;
 // for upside down z = holder_height + offset_above_extrusion + rod_radius / 2
 translate([0, - holder_width / 2, 0]) rotate([0, 0, 0]) yrodsupport(holder_height, holder_width, mnt_base_thickness, overlap, slot_tab_depth, clamp_rod_radius, rod_center_offset_vert);
 
-module yrodsupport(yh, yw, ybt,yo,ystd,yrd,yrcov) 
+module yrodsupport(yh=holder_height, yw=holder_width, ybt=mnt_base_thickness, yo=overlap, ystd=slot_tab_depth, yrd=clamp_rod_radius, yrcov=rod_center_offset_vert) 
 {
 	difference() {
 		union() {
