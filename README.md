@@ -4,7 +4,7 @@ This repository contains the CAD design files for the PrismX 3D Printer.
 
 Getting Started
 ---------------
-See src/README.txt for more details on printing PrismX parts.  Please read LICENSE and NOTICE.TXT for licensing details.  The complete PrismX 3D Printer bill of materials is published at http://bit.ly/tw-prismx-bom-1.
+See dist/plates/README.txt for more details on printing PrismX parts.  Please read LICENSE and NOTICE.TXT for licensing details.  The complete PrismX 3D Printer bill of materials is published at http://bit.ly/tw-prismx-bom-1.
 
 Directory Contents
 ------------------
