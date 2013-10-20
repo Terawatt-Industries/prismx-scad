@@ -24,6 +24,8 @@ plate #		| contents
 --------------------------------
 total		| 82 parts
 
+note:  If heatbed.stl is there - don't print it - it shouldn't be getting compiled!
+
 Remember to print 2x of plate #7!
 
 Filament Spool Holder
