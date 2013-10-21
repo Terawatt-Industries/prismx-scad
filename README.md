@@ -4,6 +4,9 @@ This repository contains the CAD design files for the PrismX 3D Printer.
 
 Getting Started
 ---------------
+Keep in mind this repository is divided into Git submodules.  If you clone the repo you will want to run this command to retrieve all the submodules:
+git submodule update --recursive
+
 See dist/plates/README.txt for more details on printing PrismX parts.  Please read LICENSE and NOTICE.TXT for licensing details.  The complete PrismX 3D Printer bill of materials is published at http://bit.ly/tw-prismx-bom-1.
 
 Directory Contents
