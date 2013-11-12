@@ -1,8 +1,8 @@
 // F. Beachler, Longevity Software LLC. d.b.a. Terawatt Industries
 
 use <heatbed.scad>;
-use <../filament_spool_holder.scad>;
-use <../../moreparts/filament-spool-holder/src/spool_holder_dowel_disc.scad>;
+use <../../moreparts/nut-clamps/nut_clamps.scad>;
+use <../../moreparts/fan-mounts/src/fan_mount.scad>;
 
 $fn=50;
 
@@ -10,11 +10,14 @@ $fn=50;
 plate1();
 
 module plate1() {
-	translate([70, 160, 0]) {
-		spool_holder_clamp();
-		translate([60, 0, 0]) spool_mount();
+	for (y = [80, 125]) {
+		translate([70, y, 10]) nut_clamp_pair(20, 4, 3);
 	}
-	for (i = [60, 130]) {
-		translate([i, 60, 0]) spool_holder_dowel_disc();
+	for (y = [80, 125]) {
+		translate([130, y, 10]) nut_clamp_pair(20, 4, 3);
 	}
+	translate([160, 130, 10]) rotate([0, 0, 90]) rotate([0, 0, 180]) fan_mount(fan_ctc = 71.5, mounting_pos = -0.75, mounting_screw = 3);
+	// brixs fan mount
+	translate([100, 155, 0]) rotate([0, 0, -90]) import("../../moreparts/brixs-fan-mount/fan_mount_fan.stl");
+	translate([62, 140, 0])  import("../../moreparts/brixs-fan-mount/fan_mount_mount.stl");
 }
