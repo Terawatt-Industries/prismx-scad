@@ -15,7 +15,7 @@ for (x = [0])
 	translate([25, 20, 0]) rotate([90, 0, 0]) mirror([1, 0, 0]) prism60inside_top_armor(thickness, slottabs, holes, false);
 }
 
-module prism60inside_top(th,st,hs)
+module prism60inside_top(th = thickness, st = slottabs, hs = holes)
 {
 	difference() {
 		union() {
@@ -31,7 +31,7 @@ module prism60inside_top(th,st,hs)
 	}
 }
 
-module prism60inside_top_armor(th, st, hs, supp)
+module prism60inside_top_armor(th = thickness, st = slottabs, hs = holes, supp = false)
 {
 	difference() {
 		union() {

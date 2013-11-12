@@ -12,7 +12,7 @@ plate #		| contents
 4 (pla)		| 2x zleads; 2x zleads_upper
 5 (pla)		| 1x zmotorbracket; 1x z_endstop; 2x z_idler_pulley; 1x z_idler_mount
 6 (pla)		| 2x prism60end_topvertex; 2x prism60end_spacer; 2x y_and_z_bottom
-7 (pla)		| 2x slim_xend -- PRINT 2x OF THIS PLATE!
+7 (pla)		| 2x slim_xend -- PRINT 2x OF THIS PLATE.
 8 (abs)		| 2x rodholder_clamp; 1x slim_x_carriage; 4x yrodsupportclamp; 1x 00str00der
 9 (pla)		| 4x prism60inside (2 mirrored, 2 not-mirrored); 4x prism60end 
 10 (pla)	| 4x prism90 (2 mirrored, 2 not-mirrored)
