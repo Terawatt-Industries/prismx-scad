@@ -11,11 +11,11 @@ $fn=50;
 plate1();
 
 module plate1() {
-	for (o = [20, 75]) {
+	for (o = [40, 95]) {
 		translate([100, o, 0]) prism60end_topvertex();
 	}
-	translate([155, 20, 0]) rotate([0, 0, 90]) prism60end_spacer();
-	translate([120, 155, 0]) rotate([0, 0, -90]) prism60end_spacer();
+	translate([165, 30, 0]) rotate([0, 0, 90]) prism60end_spacer();
+	translate([120, 175, 0]) rotate([0, 0, -90]) prism60end_spacer();
 	for (o = [125, 70]) {
 		translate([o, 140, 0]) rotate([0, 0, 90]) y_and_z_bottom();
 	}
