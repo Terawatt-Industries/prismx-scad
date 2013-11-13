@@ -32,7 +32,7 @@ module slim_xend(height = height, width = width, rod_offset = rod_offset, rod_di
 		union() {
 			translate([0, 0, 0]) x_rod_holder(height, width, rod_offset, rod_diameter, rod_spacing, z_bush_dia, leadscrew_nut_mnt_spacing, bearing_od, bearing_id, lm8uu_mnt_height, lm8uu_thickness, mnt_screw_thickness);
 			// motor base
-			translate([-(height - 30) - 0.1, 37.5 / 2, 0]) motor_base(height - 30, width - 37.5, rod_offset, rod_diameter, rod_spacing, z_bush_dia, mnt_screw_thickness);
+			translate([-(height - 30) + 0.1, 37.5 / 2, 0]) motor_base(height - 30, width - 37.5, rod_offset, rod_diameter, rod_spacing, z_bush_dia, mnt_screw_thickness);
 			// % translate([-47 / 2, (width + 47 + 21 + 12) / 2, 42 / 2 + rod_offset + rod_diameter]) rotate([0, 0, 0]) nema17(47);
 			// lm8uu holder
 			// %translate([height / 2 - 20, width / 2 + (bearing_od + lm8uu_thickness) / 2, rod_offset + rod_diameter / 2]) rotate([0, 0, 270]) lm8uu_mount_retainer(bearing_od, bearing_id, lm8uu_mnt_height, lm8uu_thickness, mount_screws, mnt_screw_thickness);
