@@ -7,7 +7,7 @@
 ## Uses distinct namespace. Jekyll settings should go at the root level.
 githubiverse:
     ## Metadata
-    title: "Terawatt Industries PrismX (SCAD sources and STL downloads)"
+    title: "PrismX 3D Printer Machine Source Code"
     author: Terawatt Industries
     license: GPLv2
     tags: [prismx,reprap,3d printer,precision,usability]
