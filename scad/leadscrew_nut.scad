@@ -24,7 +24,7 @@ module part(sideA=true)	// true to create side A, false to create side B
 		trapezoidThreadNegativeSpace( 
 			length=height, 			// axial length of the threaded rod
 			pitch=1.25,				// axial distance from crest to crest
-			pitchRadius=4, 			// radial distance from center to mid-profile
+			pitchRadius=3.85, 			// radial distance from center to mid-profile
 			threadHeightToPitch=0.5, 	// ratio between the height of the profile and the pitch
 								// std value for Acme or metric lead screw is 0.5
 			profileRatio=0.5,			// ratio between the lengths of the raised part of the profile and the pitch

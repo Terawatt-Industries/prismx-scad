@@ -96,8 +96,11 @@ module walls()
 	difference()
 	{
 			translate([h,42,0]) rotate([0,0,0]) cube([hh,20,20]);
-			translate([h-o,62,12.5]) rotate([atan(1),0,0]) cube([hh+2*o,20,25]);
+			translate([h - o, 62, 12.5]) rotate([atan(1),0,0]) cube([hh+2*o,20,25]);
+			// m4 screw slot
+			translate([h - o, 50, 12]) rotate([0,90,0]) cylinder(r = m4 / 2 , h = hh * 2 + 2*o);
 			translate([h - o, 54, 12]) rotate([0,90,0]) cylinder(r = m4 / 2 , h = hh * 2 + 2*o);
+			translate([h - o, 50, 12 + m4 / 2]) rotate([0,90,0]) cube([m4,4,10]);
 	}
 	// extrusion wall support
 	difference()
@@ -121,8 +124,10 @@ module walls()
 	{
 			translate([31,42,0]) rotate([0,0,0]) cube([hh,20,20]);
 			translate([31-o,62,12.5]) rotate([atan(1),0,0]) cube([hh+2*o,20,25]);
-			// m4 screw hole
+			// m4 screw slot
+			translate([31 - o, 50, 12]) rotate([0,90,0]) cylinder(r = m4 / 2, h = hh * 2 + 2*o);
 			translate([31 - o, 54, 12]) rotate([0,90,0]) cylinder(r = m4 / 2, h = hh * 2 + 2*o);
+			translate([31 - o, 50, 12 + m4 / 2]) rotate([0,90,0]) cube([m4,4,10]);
 	}
 	// extrusion wall support
 	difference()

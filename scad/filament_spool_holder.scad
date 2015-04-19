@@ -13,6 +13,26 @@ $fn=50;
 
 spool_holder_clamp();
 translate([60, 0, 0]) spool_mount();
+// check clamp insert fit
+% translate([0, 0.5, 0]) spool_mount_clamp_insert();
+
+module spool_mount() {
+	translate([0, 30, 14]) {
+		spool_mount_clamp_insert();
+	}
+	// base
+	translate([-20, -44 + 0.1, 0]) cube([40, 50, 15]);
+	// rod holder
+	difference() {
+		union() {
+			translate([-20, -55, 0]) {
+				translate([0, 0, 0]) cube([40, 30, 25]);
+				translate([0, 15, 25]) rotate([0, 90, 0]) cylinder(r = 30 / 2, h = 40);
+			}
+		}
+		translate([-25, -40, 18 + 4.1]) rotate([0, 90, 0]) cylinder(r = 4.1, h = 50);
+	}
+}
 
 module spool_holder_clamp(holes = true)
 {
@@ -36,25 +56,11 @@ module spool_holder_clamp(holes = true)
 		}
 }
 
-module spool_mount() {
-	translate([0, 30, 14]) {
+module spool_mount_clamp_insert() {
 		intersection() {
 			translate([0, -2, 0]) spool_mount_foot(0.95);
 			spool_mount_foot(1.05);
 		}
-	}
-	// base
-	translate([-20, -44 + 0.1, 0]) cube([40, 50, 15]);
-	// rail holder
-	difference() {
-		union() {
-			translate([-20, -55, 0]) {
-				translate([0, 0, 0]) cube([40, 30, 25]);
-				translate([0, 15, 25]) rotate([0, 90, 0]) cylinder(r = 30 / 2, h = 40);
-			}
-		}
-		translate([-25, -40, 18 + 4.1]) rotate([0, 90, 0]) cylinder(r = 4.1, h = 50);
-	}
 }
 
 module spool_mount_foot(s = 1.0) {

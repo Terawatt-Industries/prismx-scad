@@ -5,7 +5,7 @@ use <thread-library.scad>;
 
 outer_diameter = 25;
 height = 15;
-bore_diameter = 8 + 0.75;
+bore_diameter = 7.95;
 wrench_height = 8;
 wrench_size = 13;
 

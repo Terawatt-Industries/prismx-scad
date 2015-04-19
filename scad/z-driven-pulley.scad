@@ -9,8 +9,6 @@ GT2_2mm_pulley_dia = tooth_spacing (2, 0.254);
 
 zdrivenpulley();
 
-module zdrivenpulley();
-{
+module zdrivenpulley() {
 	pulley ("GT2", GT2_2mm_pulley_dia, 0.764, 1.494);
-	//translate([40,0,0]) pulley ("GT2", GT2_2mm_pulley_dia, 0.764, 1.494);
 }

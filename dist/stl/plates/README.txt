@@ -1,7 +1,7 @@
 PrismX 3D Printer
-Plates SCAD Readme
+Plates Details
 ----------------------------------------
-Compile al the scads in this folder and print them to obtain an entire set of printed parts for a PrismX 3D Printer.
+This list is the plastic parts bill of materials for the PrismX 3D Printer.  Print all of these STL files to build a complete machine.
 
 Bill of Materials (BOM)
 -----------------------
@@ -31,7 +31,7 @@ Notes:
 - Z-calibration is important in terms of printing parts that are vertically straight.  Many parts are short to minimize this but it's still important.
 - Part sets for linear bearings and acetal bushings are for press-fit part tolerances.  It is OK if you have to use a (soft) mallet or a press to assemble the part.  It is not OK to have the bearing or bushing move around or slide out of the holder.  If you don't have an 00str00der you can tweak the corresponding SCAD file (usually the "o" variable), re-compile, and re-slice.
 - Recommended slicing settings:  50% honeycomb infill, 5 perimeters, 200 micron layer height, 10 solid layers top/bottom
-- p#7 print this plate twice
+- p#7 print this plate twice; overhang support recommended, 45% overhang threshold
 - p#8 Print with 85%+ rectilinear infill - especially important for the 00str00der.  This plate should be printed in ABS since the 00str00der holds the hotend.
 - p#12 recommended to print with brim = 10mm
 - p#13 (the PSU mount) is large and barely fits on a 200mm bed - A 1mm brim (or no brim) is recommended.
