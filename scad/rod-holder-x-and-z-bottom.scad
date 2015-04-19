@@ -4,6 +4,7 @@
 include <configuration.scad>;
 
 h = 4.0;       	// base thickness - error tolerance
+ch = 9.0; 		// clamp thickness
 m = h-1;			// marker height
 o = 0.01;			//  overlap amount
 hh = 4.0 + o;			// bar holder height
@@ -11,18 +12,18 @@ m4 = m4_diameter;
 
 m3=m3_diameter;
 m3n=m3_nut_diameter;
-bar=smooth_bar_diameter_horizontal + o;
+bar=smooth_bar_diameter_horizontal - 0.5 + o;
 
 $fn=50;
 
-y_and_z_bottom();
+x_and_z_bottom();
 
-module y_and_z_bottom(h = h, m = m, hh = hh, m = m4, bar = bar) {
-	yzrodholder(h, m, hh, m4, bar);
-	rodholder_clamp(h + 2.0, m4, hh, bar);
+module x_and_z_bottom(h = h, ch = ch, m = m, hh = hh, m = m4, bar = bar) {
+	xzrodholder(h, m, hh, m4, bar);
+	rodholder_clamp(ch, m4, hh, bar);
 }
 
-module yzrodholder(yzh = h, yzm = m, yzhh = hh, yzn = m4, bar = bar)
+module xzrodholder(yzh = h, yzm = m, yzhh = hh, yzn = m4, bar = bar)
 {
 	difference()
 	{
